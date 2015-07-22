@@ -28,7 +28,7 @@ public class H2Stuckclient {
 	private static final int		PORT				= 9874;
 	private static final String		DB_CONNECTION		= "jdbc:h2:tcp://localhost:" + PORT + "//tmp/test;TRACE_LEVEL_FILE=4";
 	int								index				= 0;
-	private static final boolean	useWorkingExample	= false;	// if set to true, it demonstrate the code is working for less than 2GB files
+	private static final boolean	useWorkingExample	= true;	// if set to true, it demonstrate the code is working for less than 2GB files
 
 	public static void main(String[] args) throws Exception {
 		// Delete existing DB and start the new one & create the empty table

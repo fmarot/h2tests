@@ -8,7 +8,9 @@ This demonstrate a problem in H2 database where, when run in TCP mode (not embed
 ## how to use
 This is a typical Maven project.
 
-Please run class com.teamtter.H2Stuckclient and it will create a large file, try to store it in a CLOB and become stuck.
+You can import in your IDE or execute directly from command line: mvn exec:java
+
+Please run class com.teamtter.H2Stuckclient and it will create a large file, try to store it in a BLOB and become stuck.
 This behavior is reproducible with versions of H2 from 1.3.167 to current (1.4.186) on Linux.
 
 
