@@ -3,6 +3,8 @@
 ## Problem demonstrated
 This demonstrate a problem in H2 database where, when run in TCP mode (not embedded) and storing large files (near MAX_INT bytes or larger, ie 2Go): H2 is stuck
 
+** The problem does NOT happen when run in embedded mode ** => so the problem seems not to come from the way H2 stores the data...
+
 ## how to use
 This is a typical Maven project.
 
