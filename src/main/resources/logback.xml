@@ -1,0 +1,28 @@
+<configuration debug="false" scan="false" scanPeriod="30 seconds">
+
+<!-- 	<appender name="FILE" class="ch.qos.logback.core.FileAppender"> -->
+<!-- 		<append>false</append>  -->
+<!-- 		<file>./log/omds.log</file> -->
+<!-- 		<encoder> -->
+<!-- 			<pattern>%d{HH:mm:ss.SSS} %level [%thread] %logger %msg%n</pattern> -->
+<!-- 		</encoder>  -->
+<!-- 	</appender> -->
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %level [%thread] [%file:%line] %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="com.oleamedical" level="DEBUG" >
+	</logger>
+	
+	<logger name="h2database" level="TRACE" >
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+<!-- 		<appender-ref ref="FILE" /> -->
+	</root>
+
+</configuration>
