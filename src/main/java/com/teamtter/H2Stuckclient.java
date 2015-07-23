@@ -16,19 +16,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.apache.commons.io.FileUtils;
 import org.h2.tools.DeleteDbFiles;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 public class H2Stuckclient {
+
+	private static final Logger		log					= LoggerFactory.getLogger(H2Stuckclient.class);
 
 	private static final String		DB_DRIVER			= "org.h2.Driver";
 	private static final int		PORT				= 9874;
 	private static final String		DB_CONNECTION		= "jdbc:h2:tcp://localhost:" + PORT + "//tmp/test;TRACE_LEVEL_FILE=4";
+	private static final boolean	useWorkingExample	= false;																// if set to true, it demonstrate the code is working for less than 2GB files
+
 	int								index				= 0;
-	private static final boolean	useWorkingExample	= true;	// if set to true, it demonstrate the code is working for less than 2GB files
 
 	public static void main(String[] args) throws Exception {
 		// Delete existing DB and start the new one & create the empty table
@@ -76,7 +78,7 @@ public class H2Stuckclient {
 
 	private void insertBigFile() {
 		try (Connection connection = getDBConnection()) {
-			
+
 			File myLargeFile = null;
 			String filename = null;
 			if (useWorkingExample) {
