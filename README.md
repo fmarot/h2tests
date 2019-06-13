@@ -1,5 +1,9 @@
 # h2tests
 
+## Solution
+
+The problem showcased here has been solved in https://github.com/h2database/h2database/issues/157
+
 ## Problem demonstrated
 This demonstrate a problem in H2 database where, when run in TCP mode (not embedded) and storing large files (near MAX_INT bytes or larger, ie 2Go): H2 is stuck
 
